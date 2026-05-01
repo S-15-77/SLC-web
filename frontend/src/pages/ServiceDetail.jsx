@@ -195,31 +195,33 @@ export default function ServiceDetail() {
 
       {/* ── Overview ── */}
       <section className="sd-split reveal-block" ref={overviewRef}>
-        <div className="sd-text">
-          <h2 className="sd-section-title">Overview</h2>
-          <p className="sd-section-body">
-            {service.overview}
-          </p>
-          <div className="sd-features-list">
-            {service.features.map((feature, idx) => (
-              <div key={idx} className="sd-feature-item">
-                <span className="sd-feature-icon"><FiArrowRight /></span>
-                <span className="sd-feature-text">{feature}</span>
-              </div>
-            ))}
+        <div className="sd-split-inner">
+          <div className="sd-text">
+            <h2 className="sd-section-title">Overview</h2>
+            <p className="sd-section-body">
+              {service.overview}
+            </p>
+            <div className="sd-features-list">
+              {service.features.map((feature, idx) => (
+                <div key={idx} className="sd-feature-item">
+                  <span className="sd-feature-icon"><FiArrowRight /></span>
+                  <span className="sd-feature-text">{feature}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="sd-collage">
-          <img
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
-            alt="Data analytics"
-            className="sd-collage__back"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
-            alt="Team strategy"
-            className="sd-collage__front"
-          />
+          <div className="sd-collage">
+            <img
+              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+              alt="Data analytics"
+              className="sd-collage__back"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+              alt="Team strategy"
+              className="sd-collage__front"
+            />
+          </div>
         </div>
       </section>
 
@@ -268,7 +270,7 @@ export default function ServiceDetail() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="sd-cta reveal-block" ref={ctaRef}>
+      {/* <section className="sd-cta reveal-block" ref={ctaRef}>
         <div className="sd-cta__inner">
           <h2 className="sd-cta__title">Ready to Transform Your Business?</h2>
           <p className="sd-cta__desc">
@@ -278,7 +280,7 @@ export default function ServiceDetail() {
             Contact Our Experts <FiArrowRight />
           </Link>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

@@ -96,19 +96,12 @@
    SPLIT SECTIONS
 ───────────────────────────────────────── */
 .sd-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 120px 40px;
+  max-width: 100%;
+  padding: 0;
+  background: #fff;
 }
 
 .sd-split--flip {
-  grid-template-columns: 1fr;
-  max-width: 100%;
-  padding: 0;
   background: #fff;
 }
 
@@ -199,7 +192,7 @@
   object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-  border: 6px solid var(--bg-beige);
+  border: 6px solid #fff;
 }
 
 /* ─────────────────────────────────────────
@@ -304,7 +297,7 @@
    CTA
 ───────────────────────────────────────── */
 .sd-cta {
-  background: #fff;
+  background: var(--bg-beige);
   padding: 120px 40px;
   text-align: center;
 }
