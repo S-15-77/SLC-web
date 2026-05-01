@@ -59,7 +59,7 @@ export default function Careers() {
           <div className="cr-split__text">
             <span className="cr-label">Our Mission</span>
             <div className="cr-mission__divider"></div>
-            <h2 className="cr-title">Empowering Growth Through Strategic Consulting</h2>
+            <h2 className="cr-title section-title">Empowering Growth Through Strategic Consulting</h2>
             <p className="cr-body">
               At Saint Laurent Consulting, we are dedicated to empowering our clients and consultants 
               through modern digital learning and AI driven solutions. Our goal is to create a platform 
@@ -76,7 +76,7 @@ export default function Careers() {
       {/* ── Why Work With Us (White) ── */}
       <section className="cr-why reveal-block" ref={addToRefs}>
         <div className="container">
-          <h2 className="cr-title cr-title--center">Why Work With Us</h2>
+          <h2 className="cr-title section-title section-title--center">Why Work With Us</h2>
           <div className="cr-benefits">
             <div className="cr-benefit-card">
               <div className="cr-icon"><FiHome color="#000" size={32} /></div>
@@ -105,7 +105,7 @@ export default function Careers() {
       {/* ── Current Openings (Beige) ── */}
       <section className="cr-openings reveal-block" ref={addToRefs}>
         <div className="container">
-          <h2 className="cr-title cr-title--center">Current Openings</h2>
+          <h2 className="cr-title section-title section-title--center">Current Openings</h2>
           <p className="cr-subtitle--center">Please check out the job boards we have below for all opportunities.</p>
           <div className="cr-job-boards">
             <a href="https://www.linkedin.com/company/saintlaurent-consulting/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="cr-job-link">
@@ -122,7 +122,7 @@ export default function Careers() {
       <section className="cr-split cr-hiring reveal-block" ref={addToRefs}>
         <div className="container cr-split__inner">
           <div className="cr-split__text">
-            <h2 className="cr-title">Our Hiring Process</h2>
+            <h2 className="cr-title section-title">Our Hiring Process</h2>
             <p className="cr-body">
               Learn about the simple and transparent steps we follow to welcome new talent. 
               Our hiring process is designed to find passionate individuals who are ready to grow with us.

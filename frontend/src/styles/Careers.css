@@ -172,7 +172,7 @@
 
 .cr-benefits {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 32px;
 }
 
@@ -346,6 +346,12 @@
 }
 
 /* ── Responsive ── */
+@media (max-width: 1200px) {
+  .cr-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 1024px) {
   .cr-split__inner {
     grid-template-columns: 1fr;
@@ -359,4 +365,34 @@
   .cr-hero__title { font-size: 2.2rem; }
   .cr-job-boards { gap: 40px; }
   .cr-split__image img { height: 300px; }
+  
+  .cr-benefits {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .cr-hiring__collage {
+    height: 400px;
+  }
+  
+  .cr-hiring__collage .img-back {
+    width: 100%;
+    height: 70%;
+  }
+  
+  .cr-hiring__collage .img-front {
+    width: 80%;
+    height: 50%;
+    border-width: 4px;
+  }
+  
+  .cr-why, .cr-openings {
+    padding: 80px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .cr-hero { height: 50vh; min-height: 400px; }
+  .cr-title { font-size: 1.8rem; }
+  .cr-benefit-card { padding: 32px 24px; }
 }
