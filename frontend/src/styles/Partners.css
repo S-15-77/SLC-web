@@ -75,9 +75,17 @@
 }
 
 .partner-logo img {
-  width: 160px;
-  height: 90px;
+  width: 140px;
+  height: 60px;
   object-fit: contain;
+  /* filter: grayscale(100%); */
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.partner-logo:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 
 .partner-logo span {
@@ -93,8 +101,8 @@
     gap: 48px 60px;
   }
   .partner-logo img {
-    width: 130px;
-    height: 75px;
+    width: 120px;
+    height: 50px;
   }
 }
 
@@ -106,8 +114,8 @@
     gap: 36px 48px;
   }
   .partner-logo img {
-    width: 110px;
-    height: 64px;
+    width: 100px;
+    height: 45px;
   }
 }
 
