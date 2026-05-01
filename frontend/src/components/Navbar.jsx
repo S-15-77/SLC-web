@@ -19,7 +19,7 @@ export default function Navbar() {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-brand">
-          <img src="/favicon.ico" alt="SLC Logo" className="brand-icon" />
+          <img src="/logos/slc.png" alt="SLC Logo" className="brand-icon" />
           Saint Laurent Consulting
         </Link>
 

@@ -30,18 +30,33 @@
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-family: var(--sans);
-  font-weight: 500;
-  font-size: 1.25rem;
+  position: relative;
+  min-height: 48px; /* Standardizing brand area height */
+  padding-left: 75px; /* Space for the absolute logo (80px + gap) */
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.6rem;
   color: #fff;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
+  text-transform: none;
 }
 
 .brand-icon {
-  width: 32px;
-  height: 32px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  filter: brightness(0) invert(1) drop-shadow(0 0 12px rgba(255, 255, 255, 0.2));
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  pointer-events: none; /* Let clicks pass to the Link */
+}
+
+.navbar-brand:hover .brand-icon {
+  transform: translateY(-50%) scale(1.05);
 }
 
 .navbar-menu {
@@ -53,16 +68,18 @@
 
 .nav-link {
   font-family: var(--sans);
-  font-size: 0.95rem;
-  font-weight: 400;
+  font-size: 0.8rem;
+  font-weight: 600;
   color: #fff;
-  opacity: 0.95;
-  transition: color 0.3s ease;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: all 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #fff;
   opacity: 1;
+  letter-spacing: 0.15em;
 }
 
 .navbar-actions {
@@ -72,12 +89,22 @@
 
 .contact-link {
   font-family: var(--sans);
-  font-size: 0.95rem;
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 700;
   color: #fff;
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  transition: opacity 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 10px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+  opacity: 1;
 }
 
 .hamburger-menu {
@@ -120,6 +147,15 @@
     gap: 20px;
     border: 1px solid var(--glass-border);
   }
+
+  .navbar-brand {
+    padding-left: 75px;
+  }
+
+  .brand-icon {
+    width: 65px;
+    height: 65px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -134,7 +170,13 @@
   }
 
   .navbar-brand {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    padding-left: 60px;
+  }
+
+  .brand-icon {
+    width: 50px;
+    height: 50px;
   }
 
   .navbar-actions {
