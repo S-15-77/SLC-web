@@ -4,12 +4,12 @@ import '../styles/Footer.css';
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-bg-text">Saint Laurent</div>
+      {/* <div className="footer-bg-text">Saint Laurent Consulting</div> */}
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand-section">
             <h2 className="footer-logo">
-              <img src="/favicon.ico" alt="SLC Logo" className="footer-brand-icon" />
+              <img src="/logos/slc.png" alt="SLC Logo" className="footer-brand-icon" />
               Saint Laurent Consulting
             </h2>
             <p className="footer-tagline">
