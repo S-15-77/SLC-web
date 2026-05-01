@@ -1,0 +1,385 @@
+/* ─────────────────────────────────────────
+   ABOUT PAGE — matches home page design system
+───────────────────────────────────────── */
+.about-page {
+  padding-top: 80px;
+  background: var(--bg-beige);
+  color: var(--text-dark);
+}
+
+/* Scroll reveal */
+.reveal-block {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-block.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────
+   HERO
+───────────────────────────────────────── */
+.ab-hero {
+  background: var(--bg-beige);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+/* Breadcrumb */
+.ab-breadcrumb {
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  font-style: normal;
+  line-height: 1;
+}
+.ab-breadcrumb a { color: var(--text-muted); }
+.ab-breadcrumb a:hover { color: var(--text-dark); opacity: 1; }
+.ab-breadcrumb__sep { margin: 0 4px; }
+.ab-breadcrumb__active { color: var(--text-dark); font-weight: 600; }
+
+/* Heading uses site's serif italic style — same as hero-title, cta-title */
+.ab-hero__heading {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  /* font-style: italic; */
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+}
+
+.ab-hero__desc {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  max-width: 440px;
+}
+
+/* Right side image + badge */
+.ab-hero__right {
+  position: relative;
+}
+
+.ab-hero__img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+.ab-badge {
+  position: absolute;
+  bottom: -24px;
+  left: -24px;
+  width: 96px;
+  height: 96px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
+  animation: badge-spin 14s linear infinite;
+}
+
+@keyframes badge-spin { to { transform: rotate(360deg); } }
+
+.ab-badge__ring {
+  position: absolute;
+  inset: 2px;
+  overflow: visible;
+}
+
+.ab-badge__ring text {
+  font-family: var(--sans);
+  font-size: 8px;
+  font-weight: 700;
+  fill: var(--text-dark);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.ab-badge__icon {
+  position: relative;
+  z-index: 2;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  animation: badge-spin 14s linear infinite reverse;
+}
+
+/* ─────────────────────────────────────────
+   QUOTE — matches the intro/cta italic serif style
+───────────────────────────────────────── */
+.ab-quote {
+  background: #fff;
+  padding: 80px 40px 48px;
+}
+
+.ab-quote__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ab-quote__text {
+  font-family: var(--serif);
+
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  line-height: 1.75;
+  color: var(--text-dark);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.ab-quote__fade {
+  color: var(--text-muted);
+}
+
+/* ─────────────────────────────────────────
+   STATS
+───────────────────────────────────────── */
+.ab-stats {
+  background: #fff;
+  padding: 48px 40px 80px;
+}
+
+.ab-stats__inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  border-top: 1px solid var(--border);
+  padding-top: 48px;
+}
+
+.ab-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-block.revealed .ab-stat {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.ab-stat__num {
+  font-family: var(--sans);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.ab-stat__label {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+/* ─────────────────────────────────────────
+   MISSION / VISION — matches services split layout
+───────────────────────────────────────── */
+.ab-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 100px 40px;
+  background: var(--bg-beige);
+}
+
+/* Vision section uses white background — inverted */
+.ab-split--flip {
+  background: #fff;
+  max-width: 100%;
+  padding: 0;
+  display: block;
+}
+
+.ab-split-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 100px 40px;
+}
+
+/* Removed old offsets as they are handled by ab-split-inner */
+
+/* Section titles use site's serif italic — matching h2 global style */
+.ab-section-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  /* font-style: italic; */
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  line-height: 1.1;
+}
+
+.ab-section-body {
+  font-family: var(--sans);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+.ab-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+.ab-checklist__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+}
+
+.ab-checklist__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.reveal-block.revealed .ab-checklist__item {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Check icon — matches service-icon-wrapper style from Services */
+.ab-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--bg-dark);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.6rem;
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+/* ─────────────────────────────────────────
+   PHOTO COLLAGE
+───────────────────────────────────────── */
+.ab-collage {
+  position: relative;
+  height: 440px;
+}
+
+.ab-collage__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 68%;
+  height: 85%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.11);
+}
+
+.ab-collage__front {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 54%;
+  height: 56%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  border: 4px solid #fff; /* Default for beige background */
+}
+
+.ab-split--flip .ab-collage__front {
+  border: 4px solid var(--bg-beige); /* For white background */
+}
+
+/* Mirrored collage (vision section) */
+.ab-collage--r .ab-collage__back {
+  left: auto;
+  right: 0;
+}
+
+.ab-collage--r .ab-collage__front {
+  right: auto;
+  left: 0;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .ab-hero,
+  .ab-split,
+  .ab-split-inner {
+    padding: 60px 40px;
+    gap: 48px;
+  }
+  .ab-stats__inner { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .ab-hero,
+  .ab-split,
+  .ab-split-inner {
+    grid-template-columns: 1fr;
+    padding: 60px 24px;
+    gap: 40px;
+  }
+
+  .ab-hero__right { order: -1; }
+  .ab-hero__img { height: 260px; }
+  .ab-badge { width: 80px; height: 80px; bottom: -18px; left: -18px; }
+
+  .ab-split--flip { padding: 0; }
+  .ab-split-inner { order: 0; }
+  .ab-split--flip .ab-collage { order: -1; }
+
+  .ab-collage { height: 300px; }
+  .ab-stats__inner { grid-template-columns: repeat(2, 1fr); }
+  .ab-quote { padding: 60px 24px 40px; }
+  .ab-stats { padding: 32px 24px 60px; }
+}
