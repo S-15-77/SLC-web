@@ -1,16 +1,44 @@
+import { useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { FiArrowRight, FiCheck } from 'react-icons/fi';
 import '../styles/ServiceDetail.css';
+
+function useReveal(threshold = 0.12) {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          el.classList.add('revealed');
+          obs.unobserve(el);
+        }
+      },
+      { threshold }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, [threshold]);
+  return ref;
+}
 
 export default function ServiceDetail() {
   const { serviceId } = useParams();
 
+  const heroRef = useReveal(0.05);
+  const overviewRef = useReveal(0.1);
+  const featuresRef = useReveal(0.1);
+  const benefitsRef = useReveal(0.1);
+  const useCasesRef = useReveal(0.1);
+  const ctaRef = useReveal(0.1);
+
   const serviceDetails = {
     'ai-innovation': {
       title: 'AI Innovation',
-      icon: '🤖',
-      backgroundImage: 'url("https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&w=1200&q=80")',
+      subtitle: 'Applied Intelligence',
+      image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80',
       description: 'Reimagine your business with Applied AI, Automation, and Generative AI.',
-      fullDescription: 'Transform your organization with cutting-edge AI solutions. Our team specializes in:',
       overview: 'Artificial Intelligence is no longer just a competitive advantage—it\'s a necessity. We help enterprises harness AI to automate processes, unlock insights, and drive exponential growth.',
       features: [
         'Predictive Analytics & Machine Learning',
@@ -37,10 +65,9 @@ export default function ServiceDetail() {
     },
     'cloud-tech': {
       title: 'Cloud Technologies',
-      icon: '☁️',
-      backgroundImage: 'url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80")',
+      subtitle: 'Modern Infrastructure',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80',
       description: 'Build secure, scalable, and cost-optimized cloud infrastructure.',
-      fullDescription: 'Modernize your infrastructure with enterprise-grade cloud solutions covering:',
       overview: 'Migrate to the cloud with confidence. Our expert architects design, implement, and manage secure, scalable cloud infrastructure tailored to your business needs.',
       features: [
         'AWS, Azure & GCP Services',
@@ -66,11 +93,10 @@ export default function ServiceDetail() {
       ]
     },
     'llms': {
-      title: 'Large Language Models (LLMs)',
-      icon: '🧠',
-      backgroundImage: 'url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80")',
+      title: 'Large Language Models',
+      subtitle: 'Enterprise LLMs',
+      image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80',
       description: 'Leverage enterprise-grade LLMs for business automation.',
-      fullDescription: 'Harness the power of LLMs to drive innovation in your organization:',
       overview: 'Large Language Models are reshaping how businesses operate. From customer interactions to content creation, we help you deploy LLMs responsibly and effectively.',
       features: [
         'LLM Integration & Implementation',
@@ -97,10 +123,9 @@ export default function ServiceDetail() {
     },
     'staffing': {
       title: 'AI & IT Staffing',
-      icon: '👥',
-      backgroundImage: 'url("https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=1200&q=80")',
+      subtitle: 'Expert Talent',
+      image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=80',
       description: 'Access top-tier professionals specializing in AI and Cloud.',
-      fullDescription: 'Build world-class teams with our expert talent network:',
       overview: 'Finding the right talent is crucial for digital transformation. We connect you with vetted, experienced professionals who can accelerate your AI and cloud initiatives.',
       features: [
         'AI Engineers & Scientists',
@@ -112,14 +137,14 @@ export default function ServiceDetail() {
       ],
       benefits: [
         'Access pre-screened, verified talent',
-        'Flexible engagement models (FTE, contract, project-based)',
+        'Flexible engagement models',
         '15,000+ professionals in our network',
-        'Rapid placement within days, not weeks',
-        'Ongoing support and team management'
+        'Rapid placement within days',
+        'Ongoing support and management'
       ],
       useCases: [
         'Building dedicated AI/ML teams',
-        'Augmenting existing teams with specialists',
+        'Augmenting existing teams',
         'Short-term project expertise',
         'Technical leadership and mentorship',
         'Knowledge transfer and training'
@@ -130,64 +155,131 @@ export default function ServiceDetail() {
   const service = serviceDetails[serviceId] || serviceDetails['ai-innovation'];
 
   return (
-    <div className="service-detail">
-      <section className="service-hero" style={{ backgroundImage: service.backgroundImage }}>
-        <div className="service-hero-content">
-          <h1>{service.title}</h1>
-          <p>{service.description}</p>
+    <div className="sd-page">
+      {/* ── Hero ── */}
+      <section className="sd-hero reveal-block" ref={heroRef}>
+        <div className="sd-hero__left">
+          <span className="sd-label">{service.subtitle}</span>
+          <h1 className="sd-hero__heading">
+            {service.title.split(' ').length > 2 ? (
+              <>
+                {service.title.split(' ').slice(0, Math.ceil(service.title.split(' ').length / 2)).join(' ')}
+                <br />
+                {service.title.split(' ').slice(Math.ceil(service.title.split(' ').length / 2)).join(' ')}
+              </>
+            ) : (
+              service.title.split(' ').map((word, i, arr) => (
+                <span key={i}>
+                  {word}
+                  {i === 0 && arr.length > 1 && <br />}
+                  {i === 0 && arr.length > 1 ? '' : ' '}
+                </span>
+              ))
+            )}
+          </h1>
+          <p className="sd-hero__desc">
+            {service.description}
+          </p>
+        </div>
+
+        <div className="sd-hero__right">
+          <div className="sd-hero__img-wrapper">
+            <img
+              src={service.image}
+              alt={service.title}
+              className="sd-hero__img"
+            />
+          </div>
         </div>
       </section>
 
-      <section className="service-body">
-        <div className="service-container">
-          {/* Overview */}
-          <div className="service-section">
-            <h2>Overview</h2>
-            <p>{service.overview}</p>
+      {/* ── Overview ── */}
+      <section className="sd-split reveal-block" ref={overviewRef}>
+        <div className="sd-text">
+          <h2 className="sd-section-title">Overview</h2>
+          <p className="sd-section-body">
+            {service.overview}
+          </p>
+          <div className="sd-features-list">
+            {service.features.map((feature, idx) => (
+              <div key={idx} className="sd-feature-item">
+                <span className="sd-feature-icon"><FiArrowRight /></span>
+                <span className="sd-feature-text">{feature}</span>
+              </div>
+            ))}
           </div>
+        </div>
+        <div className="sd-collage">
+          <img
+            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80"
+            alt="Data analytics"
+            className="sd-collage__back"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80"
+            alt="Team strategy"
+            className="sd-collage__front"
+          />
+        </div>
+      </section>
 
-          {/* Features/Capabilities */}
-          <div className="service-section">
-            <h2>{service.fullDescription}</h2>
-            <div className="features-grid">
-              {service.features.map((feature, idx) => (
-                <div key={idx} className="feature-item">
-                  <p>{feature}</p>
+      {/* ── Benefits ── */}
+      <section className="sd-benefits reveal-block" ref={benefitsRef}>
+        <div className="sd-container">
+          <h2 className="sd-section-title sd-title--center">Key Benefits</h2>
+          <div className="sd-benefits-grid">
+            {service.benefits.map((benefit, idx) => (
+              <div key={idx} className="sd-benefit-card">
+                <div className="sd-check-circle">
+                  <FiCheck />
                 </div>
-              ))}
-            </div>
+                <p>{benefit}</p>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
 
-          {/* Benefits */}
-          <div className="service-section">
-            <h2>Key Benefits</h2>
-            <ul className="benefits-list">
-              {service.benefits.map((benefit, idx) => (
-                <li key={idx}>{benefit}</li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Use Cases */}
-          <div className="service-section">
-            <h2>Use Cases</h2>
-            <ul className="usecases-list">
+      {/* ── Use Cases ── */}
+      <section className="sd-usecases sd-split sd-split--flip reveal-block" ref={useCasesRef}>
+        <div className="sd-split-inner">
+          <div className="sd-text">
+            <h2 className="sd-section-title">Use Cases</h2>
+            <p className="sd-section-body">
+              Discover how our {service.title} solutions are being applied across industries to drive meaningful results.
+            </p>
+            <ul className="sd-checklist">
               {service.useCases.map((useCase, idx) => (
-                <li key={idx}>{useCase}</li>
+                <li key={idx} className="sd-checklist__item">
+                  <span className="sd-check">✔</span>
+                  {useCase}
+                </li>
               ))}
             </ul>
           </div>
-
-          {/* CTA */}
-          <div className="service-cta">
-            <h3>Ready to Get Started?</h3>
-            <p>Let's discuss how we can help transform your business.</p>
-            <Link to="/contact" className="btn btn-lg btn-primary">
-              Contact Our Experts
-            </Link>
+          <div className="sd-image-container">
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80"
+              alt="Collaboration"
+              className="sd-side-img"
+            />
           </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="sd-cta reveal-block" ref={ctaRef}>
+        <div className="sd-cta__inner">
+          <h2 className="sd-cta__title">Ready to Transform Your Business?</h2>
+          <p className="sd-cta__desc">
+            Let's discuss how our expertise in {service.title} can help you achieve your strategic goals.
+          </p>
+          <Link to="/contact" className="sd-btn sd-btn--primary">
+            Contact Our Experts <FiArrowRight />
+          </Link>
         </div>
       </section>
     </div>
   );
 }
+
