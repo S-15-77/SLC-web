@@ -1,14 +1,28 @@
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import '../styles/Navbar.css';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const lastScrollYRef = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const currentScrollY = window.scrollY;
+      const scrollDelta = currentScrollY - lastScrollYRef.current;
+
+      setIsScrolled(currentScrollY > 20);
+
+      // Hide navbar when scrolling down, show when scrolling up
+      if (scrollDelta > 10) {
+        setIsHidden(true);
+      } else if (scrollDelta < -10) {
+        setIsHidden(false);
+      }
+
+      lastScrollYRef.current = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -16,7 +30,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${isScrolled ? 'scrolled' : ''} ${isHidden ? 'hidden' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-brand">
           <img src="/logos/slc.png" alt="SLC Logo" className="brand-icon" />

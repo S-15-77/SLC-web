@@ -11,7 +11,13 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 100px;
   z-index: 1000;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.hidden {
+  transform: translateX(-50%) translateY(-150px);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .navbar.scrolled {
