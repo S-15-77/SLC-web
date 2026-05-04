@@ -59,13 +59,12 @@ export default function About() {
             <span className="ab-breadcrumb__active">About</span>
           </p>
           <h1 className="ab-hero__heading">
-            Crafting Excellence<br />Together
+            We Are the Bridge Between<br />Vision and Execution.
           </h1>
           <p className="ab-hero__desc">
-            At Saint Laurent Consulting we believe in the power of collaboration to achieve
-            outstanding results. With a team of skilled professionals and a commitment to
-            quality, we work hand in hand with our clients to bring their ideas to life.
-            Together, we create strategies and solutions that stand the test of time.
+            Founded on the conviction that technology and human talent are stronger together, 
+            Saint Laurent Consulting has become a trusted partner for enterprises and 
+            innovators across North America.
           </p>
         </div>
 

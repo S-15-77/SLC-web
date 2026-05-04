@@ -80,9 +80,9 @@ export default function Contact() {
             Let's Start a<br />Conversation
           </h1>
           <p className="ct-hero__desc">
-            Whether you're ready to launch a project or just exploring possibilities,
-            we'd love to hear from you. Our team of expert consultants is here to help
-            you navigate the road ahead reach out and let's build something great together.
+            Whether you're looking to transform your technology, place your next hire, or explore what AI and Cloud can do for your business  we're ready to listen.
+No pressure. No pitch. Just a real conversation with people who understand your world.
+
           </p>
         </div>
 
@@ -115,7 +115,7 @@ export default function Contact() {
           <div className="ct-form-header">
             <h2 className="ct-form-title">Send Us a Message</h2>
             <p className="ct-form-sub">
-              Fill in the details below and a member of our team will be in touch within one business day.
+              Tell us what you're working on. A member of our team will respond within one business day.
             </p>
           </div>
 
@@ -206,6 +206,9 @@ export default function Contact() {
               <span className="ct-submit-arrow">↗</span>
             </button>
           </form>
+          <p className="ct-trust-line">
+            We typically respond within 24 hours. Your information is never shared.
+          </p>
         </div>
       </section>
 

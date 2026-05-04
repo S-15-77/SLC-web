@@ -291,6 +291,15 @@
   transform: translate(2px, -2px);
 }
 
+.ct-trust-line {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 24px;
+  text-align: left;
+  opacity: 0.8;
+}
+
 /* ─────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────── */

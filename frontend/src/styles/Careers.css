@@ -179,71 +179,56 @@
 
 .cr-benefit-card {
   background: #fff;
-  padding: 48px 32px;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-  border: 1px solid #f1f1f1;
+  padding: 40px;
+  border-radius: 16px;
+  text-align: left;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f0f0f0;
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-  position: relative;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .cr-benefit-card:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
   border-color: var(--accent);
 }
 
-.cr-benefit-card::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: var(--accent);
-  transform: scaleX(0);
-  transition: transform 0.4s ease;
-  transform-origin: right;
-}
-
-.cr-benefit-card:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
 .cr-icon {
-  font-size: 2.5rem;
-  margin-bottom: 24px;
-  background: #fdfaf8;
-  width: 72px;
-  height: 72px;
+  background: rgba(32, 131, 254, 0.05); /* Subtle brand tint */
+  color: black;
+  width: 64px;
+  height: 64px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  transition: transform 0.4s ease;
-  color: #000;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  margin: 0; /* Left align */
 }
 
 .cr-benefit-card:hover .cr-icon {
-  transform: scale(1.1) rotate(5deg);
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.05);
 }
 
 .cr-benefit-card h3 {
-  font-family: var(--sans);
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 16px;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin: 0;
+  line-height: 1.2;
 }
 
 .cr-benefit-card p {
   font-size: 0.95rem;
   line-height: 1.6;
   color: #666;
+  margin: 0;
 }
 
 /* ── Current Openings ── */
@@ -292,37 +277,43 @@
   list-style: none;
   padding: 0;
   margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .cr-steps li {
   display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.cr-steps li:last-child {
+  align-items: flex-start;
+  gap: 24px;
+  padding: 0;
   border-bottom: none;
 }
 
-.cr-step-icon {
-  font-size: 1.5rem;
-  background: #f5f5ff;
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  color: #000;
+.cr-step-num {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  color: black;
+  font-weight: 500;
+  line-height: 1;
+  opacity: 0.2;
+  margin-top: 2px;
+  min-width: 40px;
 }
 
-.cr-step-text {
+.cr-step-content h3 {
   font-family: var(--sans);
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #1a1a1a;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 8px;
+}
+
+.cr-step-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
 }
 
 .cr-btn {

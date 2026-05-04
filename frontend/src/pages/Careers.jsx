@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { FiFileText, FiUser, FiTarget, FiCheckCircle, FiHome, FiHeart, FiBook, FiTrendingUp } from 'react-icons/fi';
+import { FiFileText, FiUser, FiTarget, FiCheckCircle, FiZap, FiGlobe, FiTrendingUp } from 'react-icons/fi';
 import '../styles/Careers.css';
 
 const LinkedInLogo = () => (
@@ -79,24 +79,24 @@ export default function Careers() {
           <h2 className="cr-title section-title section-title--center">Why Work With Us</h2>
           <div className="cr-benefits">
             <div className="cr-benefit-card">
-              <div className="cr-icon"><FiHome color="#000" size={32} /></div>
-              <h3>Flexible/Remote</h3>
-              <p>Work from anywhere with the flexibility that fits your lifestyle. We support remote work to help you stay productive.</p>
+              <div className="cr-icon"><FiZap size={32} /></div>
+              <h3>Work at the Frontier</h3>
+              <p>AI, Cloud, and LLMs aren't talking points here they're the core of every engagement. You'll work on real problems with real stakes, alongside people who are genuinely at the cutting edge.</p>
             </div>
             <div className="cr-benefit-card">
-              <div className="cr-icon"><FiHeart color="#000" size={32} /></div>
-              <h3>Health and Wellness</h3>
-              <p>Comprehensive health benefits and wellness programs to ensure you and your family are always taken care of.</p>
+              <div className="cr-icon"><FiTarget size={32} /></div>
+              <h3>A Culture Built on Ownership</h3>
+              <p>We're a boutique firm. Your ideas are heard, your contributions are visible, and your growth isn't bottlenecked by layers of management. You move fast and you see impact.</p>
             </div>
             <div className="cr-benefit-card">
-              <div className="cr-icon"><FiBook color="#000" size={32} /></div>
-              <h3>Learning Stipend</h3>
-              <p>We invest in your growth with annual learning budgets, certifications, and access to premium training platforms.</p>
+              <div className="cr-icon"><FiGlobe size={32} /></div>
+              <h3>Global Reach, Personal Feel</h3>
+              <p>With operations across North America and Asia and a talent network spanning 15,000+ professionals, you'll gain exposure that goes far beyond a single market with the tight-knit energy of a high-performing team.</p>
             </div>
             <div className="cr-benefit-card">
-              <div className="cr-icon"><FiTrendingUp color="#000" size={32} /></div>
-              <h3>Career Growth</h3>
-              <p>Clear paths for advancement and mentorship from industry leaders to help you reach your full potential.</p>
+              <div className="cr-icon"><FiTrendingUp size={32} /></div>
+              <h3>We Invest in Your Growth</h3>
+              <p>Whether you're building technical expertise, developing client relationships, or stepping into leadership we create the conditions for you to advance, not just perform.</p>
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@ export default function Careers() {
       <section className="cr-openings reveal-block" ref={addToRefs}>
         <div className="container">
           <h2 className="cr-title section-title section-title--center">Current Openings</h2>
-          <p className="cr-subtitle--center">Please check out the job boards we have below for all opportunities.</p>
+          <p className="cr-subtitle--center">We're always looking for exceptional people. Browse our active roles below and if you don't see a perfect match, reach out anyway. The right person always finds a home here.</p>
           <div className="cr-job-boards">
             <a href="https://www.linkedin.com/company/saintlaurent-consulting/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="cr-job-link">
               <LinkedInLogo />
@@ -124,29 +124,41 @@ export default function Careers() {
           <div className="cr-split__text">
             <h2 className="cr-title section-title">Our Hiring Process</h2>
             <p className="cr-body">
-              Learn about the simple and transparent steps we follow to welcome new talent. 
-              Our hiring process is designed to find passionate individuals who are ready to grow with us.
+              We keep it straightforward, transparent, and respectful of your time. Here's what to expect when you apply to Saint Laurent Consulting.
+
             </p>
             <ul className="cr-steps">
               <li>
-                <span className="cr-step-icon"><FiFileText color="#000" size={22} /></span>
-                <span className="cr-step-text">Application Review</span>
+                <div className="cr-step-num">01</div>
+                <div className="cr-step-content">
+                  <h3>Apply</h3>
+                  <p>Submit your application through LinkedIn, Indeed, or directly to our team. We review every submission personally—no automated rejections.</p>
+                </div>
               </li>
               <li>
-                <span className="cr-step-icon"><FiUser color="#000" size={22} /></span>
-                <span className="cr-step-text">Initial Interview</span>
+                <div className="cr-step-num">02</div>
+                <div className="cr-step-content">
+                  <h3>Discovery Call</h3>
+                  <p>A short conversation with our talent team to understand your background, goals, and what you're looking for. We listen first.</p>
+                </div>
               </li>
               <li>
-                <span className="cr-step-icon"><FiTarget color="#000" size={22} /></span>
-                <span className="cr-step-text">Final Interview</span>
+                <div className="cr-step-num">03</div>
+                <div className="cr-step-content">
+                  <h3>In-Depth Interview</h3>
+                  <p>Depending on the role, this may include a technical discussion, case review, or leadership conversation. We want to understand how you think, not just what you've done.</p>
+                </div>
               </li>
               <li>
-                <span className="cr-step-icon"><FiCheckCircle color="#000" size={22} /></span>
-                <span className="cr-step-text">Offer & Onboarding</span>
+                <div className="cr-step-num">04</div>
+                <div className="cr-step-content">
+                  <h3>Offer & Onboarding</h3>
+                  <p>When we find the right fit, we move quickly. Our onboarding is designed to get you contributing and feeling at home from day one.</p>
+                </div>
               </li>
             </ul>
             <div className="cr-btn-wrapper">
-              <a href="/contact" className="cr-btn">Join our team</a>
+              {/* <a href="/contact" className="cr-btn">Join our team</a> */}
             </div>
           </div>
           <div className="cr-split__image cr-hiring__collage">
