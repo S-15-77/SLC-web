@@ -1,11 +1,11 @@
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 800px;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
   background-color: var(--bg-dark);
+  padding-top: 60px;
 }
 
 .hero-background {
@@ -14,7 +14,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('/hero.png') center/cover no-repeat;
+  background: url('/careers-hero-bg.png') center/cover no-repeat;
   z-index: 0;
 }
 
@@ -41,11 +41,12 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  justify-content: flex-start;
 }
 
 .hero-content {
   max-width: 800px;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 .hero-title {
@@ -83,27 +84,28 @@
 }
 
 .hero-cards-wrapper {
-  margin-top: auto;
-  padding-top: 80px;
+  margin-top: 0;
+  padding-top: 20px;
+  padding-bottom: 0;
 }
 
 .hero-cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
 
 .hero-card {
   background: #fff;
-  border-radius: 16px;
-  padding: 32px 28px;
+  border-radius: 14px;
+  padding: 28px 24px;
   text-align: center;
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
 
 .hero-card:hover {

@@ -74,7 +74,7 @@ export default function Careers() {
     <div className={`careers-v2 ${isModalOpen ? 'modal-active' : ''}`}>
       {/* ── Hero Section ── */}
       <section className="cr-hero">
-        <div className="cr-hero__bg" style={{ backgroundImage: 'url("/careers-hero-bg.png")' }}></div>
+        <div className="cr-hero__bg" style={{ backgroundImage: 'url("/hero.png")' }}></div>
         <div className="cr-hero__overlay"></div>
         <div className="cr-hero__content container">
           <h1 className="cr-hero__title">
@@ -120,7 +120,7 @@ export default function Careers() {
             <div className="cr-benefit-card">
               <div className="cr-icon"><FiGlobe size={32} /></div>
               <h3>Global Reach, Personal Feel</h3>
-              <p>With operations across North America and Asia and a talent network spanning 15,000+ professionals, you'll gain exposure that goes far beyond a single market with the tight-knit energy of a high-performing team.</p>
+              <p>With operations across North America and a talent network spanning 15,000+ professionals, you'll gain exposure that goes far beyond a single market with the tight-knit energy of a high-performing team.</p>
             </div>
             <div className="cr-benefit-card">
               <div className="cr-icon"><FiTrendingUp size={32} /></div>
