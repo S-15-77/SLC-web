@@ -31,8 +31,8 @@ export default function Footer() {
             <div className="footer-column">
               <h4 className="footer-heading">Social</h4>
               <ul className="footer-links">
-                <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">LinkedIN</a></li>
-                <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Indeed</a></li>
+                <li><a href="https://www.linkedin.com/company/saintlaurent-consulting/posts/?feedView=all" target="_blank" rel="noopener noreferrer">LinkedIN</a></li>
+                <li><a href="https://ca.indeed.com/cmp/Saint-Laurent-Consulting?campaignid=mobvjcmp&from=mobviewjob&tk=1jnpl4duago6a802&fromjk=3aa9b0eacfd1263d" target="_blank" rel="noopener noreferrer">Indeed</a></li>
                 
               </ul>
             </div>

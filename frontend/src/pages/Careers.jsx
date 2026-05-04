@@ -111,7 +111,7 @@ export default function Careers() {
             <a href="https://www.linkedin.com/company/saintlaurent-consulting/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="cr-job-link">
               <LinkedInLogo />
             </a>
-            <a href="https://www.indeed.com" target="_blank" rel="noopener noreferrer" className="cr-job-link">
+            <a href="https://ca.indeed.com/cmp/Saint-Laurent-Consulting?campaignid=mobvjcmp&from=mobviewjob&tk=1jnpl4duago6a802&fromjk=3aa9b0eacfd1263d" target="_blank" rel="noopener noreferrer" className="cr-job-link">
               <IndeedLogo />
             </a>
           </div>
