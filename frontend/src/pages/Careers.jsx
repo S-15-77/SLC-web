@@ -1,6 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { FiFileText, FiUser, FiTarget, FiCheckCircle, FiZap, FiGlobe, FiTrendingUp } from 'react-icons/fi';
+import { useState, useEffect, useRef } from 'react';
+import { FiFileText, FiUser, FiTarget, FiCheckCircle, FiZap, FiGlobe, FiTrendingUp, FiX, FiUpload, FiCheck } from 'react-icons/fi';
 import '../styles/Careers.css';
 
 const LinkedInLogo = () => (
@@ -12,6 +11,16 @@ const IndeedLogo = () => (
 );
 
 export default function Careers() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formStatus, setFormStatus] = useState('idle'); // idle, submitting, success
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    linkedIn: '',
+    message: '',
+    resume: null
+  });
+
   const revealRefs = useRef([]);
   revealRefs.current = [];
 
@@ -37,19 +46,42 @@ export default function Careers() {
     return () => observer.disconnect();
   }, []);
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e) => {
+    setFormData(prev => ({ ...prev, resume: e.target.files[0] }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+    
+    // Simulate API call
+    setTimeout(() => {
+      setFormStatus('success');
+      setTimeout(() => {
+        setIsModalOpen(false);
+        setFormStatus('idle');
+        setFormData({ fullName: '', email: '', linkedIn: '', message: '', resume: null });
+      }, 2000);
+    }, 1500);
+  };
+
   return (
-    <div className="careers-v2">
+    <div className={`careers-v2 ${isModalOpen ? 'modal-active' : ''}`}>
       {/* ── Hero Section ── */}
       <section className="cr-hero">
         <div className="cr-hero__bg" style={{ backgroundImage: 'url("/careers-hero-bg.png")' }}></div>
         <div className="cr-hero__overlay"></div>
         <div className="cr-hero__content container">
           <h1 className="cr-hero__title">
-            Grow Your Career With a Team<br />That Values Innovation.
+            Grow Your Career With a Team That Defines<br/> What's Next.
           </h1>
           <p className="cr-hero__subtitle">
-            Explore opportunities to grow, innovate, and make a real impact.<br />
-            Join a team where your ideas, skills, and passion truly matter.
+            Join a firm at the forefront of AI, Cloud, and Technology Talent. At Saint Laurent Consulting, your expertise shapes industries  and your growth is part of the mission.
           </p>
         </div>
       </section>
@@ -60,13 +92,9 @@ export default function Careers() {
           <div className="cr-split__text">
             <span className="cr-label">Our Mission</span>
             <div className="cr-mission__divider"></div>
-            <h2 className="cr-title section-title">Empowering Growth Through Strategic Consulting</h2>
+            <h2 className="cr-title section-title">Empowering Careers Through Technology and Talent.</h2>
             <p className="cr-body">
-              At Saint Laurent Consulting, we are dedicated to empowering our clients and consultants 
-              through modern digital learning and AI driven solutions. Our goal is to create a platform 
-              that inspires innovation, collaboration, and knowledge sharing. Join us in shaping the 
-              future of enterprise consulting.
-            </p>
+              At Saint Laurent Consulting, we believe the right opportunity can change everything. We've built a firm where consultants, recruiters, and technology professionals come to do their most impactful work — placing elite talent, solving complex challenges, and helping organizations transform at the speed of innovation.</p>
           </div>
           <div className="cr-split__image">
             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="SLC Mission" />
@@ -126,7 +154,6 @@ export default function Careers() {
             <h2 className="cr-title section-title">Our Hiring Process</h2>
             <p className="cr-body">
               We keep it straightforward, transparent, and respectful of your time. Here's what to expect when you apply to Saint Laurent Consulting.
-
             </p>
             <ul className="cr-steps">
               <li>
@@ -158,9 +185,6 @@ export default function Careers() {
                 </div>
               </li>
             </ul>
-            <div className="cr-btn-wrapper">
-              {/* <a href="/contact" className="cr-btn">Join our team</a> */}
-            </div>
           </div>
           <div className="cr-split__image cr-hiring__collage">
             <img src="/hiring-bg.png" alt="Hiring Process" className="img-back" />
@@ -168,6 +192,7 @@ export default function Careers() {
           </div>
         </div>
       </section>
+
       {/* ── Bottom CTA ── */}
       <section className="cr-cta reveal-block" ref={addToRefs}>
         <div className="cr-cta__bg"></div>
@@ -179,10 +204,108 @@ export default function Careers() {
               We're growing across consulting, technology, and talent. If you bring exceptional 
               skills and a high standard of work, we want to hear from you regardless of what's posted.
             </p>
-            <Link to="/contact" className="cr-cta__btn">Reach Out Directly</Link>
+            <button onClick={() => setIsModalOpen(true)} className="cr-cta__btn">Reach Out Directly</button>
           </div>
         </div>
       </section>
+
+      {/* ── Application Modal ── */}
+      {isModalOpen && (
+        <div className="cr-modal-overlay" onClick={() => setIsModalOpen(false)}>
+          <div className="cr-modal" onClick={(e) => e.stopPropagation()}>
+            <button className="cr-modal-close" onClick={() => setIsModalOpen(false)}>
+              <FiX />
+            </button>
+            
+            <div className="cr-modal-header">
+              <h2 className="cr-modal-title">Join the SLC Network</h2>
+              <p>Tell us about your background and attach your resume. We'll be in touch if there's a match.</p>
+            </div>
+
+            {formStatus === 'success' ? (
+              <div className="cr-form-success">
+                <div className="cr-success-icon"><FiCheck /></div>
+                <h3>Application Sent</h3>
+                <p>Thank you for reaching out. A member of our team will review your profile shortly.</p>
+              </div>
+            ) : (
+              <form className="cr-modal-form" onSubmit={handleSubmit}>
+                <div className="cr-form-group">
+                  <label>Full Name *</label>
+                  <input 
+                    type="text" 
+                    name="fullName" 
+                    required 
+                    value={formData.fullName}
+                    onChange={handleInputChange}
+                    placeholder="Jane Doe"
+                  />
+                </div>
+                
+                <div className="cr-form-group">
+                  <label>Email Address *</label>
+                  <input 
+                    type="email" 
+                    name="email" 
+                    required 
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="jane@example.com"
+                  />
+                </div>
+
+                <div className="cr-form-group">
+                  <label>LinkedIn Profile (Optional)</label>
+                  <input 
+                    type="url" 
+                    name="linkedIn" 
+                    value={formData.linkedIn}
+                    onChange={handleInputChange}
+                    placeholder="https://linkedin.com/in/username"
+                  />
+                </div>
+
+                <div className="cr-form-group">
+                  <label>Resume / CV *</label>
+                  <div className="cr-file-upload">
+                    <input 
+                      type="file" 
+                      id="resume-upload" 
+                      accept=".pdf,.doc,.docx" 
+                      required 
+                      onChange={handleFileChange}
+                    />
+                    <label htmlFor="resume-upload" className="cr-file-label">
+                      <FiUpload />
+                      <span>{formData.resume ? formData.resume.name : 'Upload PDF or Word Doc'}</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div className="cr-form-group">
+                  <label>Briefly, what are you looking for? *</label>
+                  <textarea 
+                    name="message" 
+                    required 
+                    rows="4"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Tell us about your expertise and goals..."
+                  />
+                </div>
+
+                <button 
+                  type="submit" 
+                  className={`cr-form-submit ${formStatus === 'submitting' ? 'loading' : ''}`}
+                  disabled={formStatus === 'submitting'}
+                >
+                  {formStatus === 'submitting' ? 'Submitting...' : 'Submit Application'}
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
