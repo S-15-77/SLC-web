@@ -9,7 +9,9 @@ export default function Footer() {
         <div className="footer-top">
           <div className="footer-brand-section">
             <h2 className="footer-logo">
-              <img src="/logos/slc.png" alt="SLC Logo" className="footer-brand-icon" />
+              <div className="footer-brand-icon-wrap">
+                <img src="/logos/slc.png" alt="SLC Logo" className="footer-brand-icon" />
+              </div>
               Saint Laurent Consulting
             </h2>
             <p className="footer-tagline">
