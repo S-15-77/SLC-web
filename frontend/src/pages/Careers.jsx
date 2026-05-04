@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { FiFileText, FiUser, FiTarget, FiCheckCircle, FiZap, FiGlobe, FiTrendingUp } from 'react-icons/fi';
 import '../styles/Careers.css';
 
@@ -164,6 +165,21 @@ export default function Careers() {
           <div className="cr-split__image cr-hiring__collage">
             <img src="/hiring-bg.png" alt="Hiring Process" className="img-back" />
             <img src="/careers-office.png" alt="Interview" className="img-front" />
+          </div>
+        </div>
+      </section>
+      {/* ── Bottom CTA ── */}
+      <section className="cr-cta reveal-block" ref={addToRefs}>
+        <div className="cr-cta__bg"></div>
+        <div className="cr-cta__overlay"></div>
+        <div className="container">
+          <div className="cr-cta__content">
+            <h2 className="cr-cta__title">Don't See Your Role?</h2>
+            <p className="cr-cta__subtext">
+              We're growing across consulting, technology, and talent. If you bring exceptional 
+              skills and a high standard of work, we want to hear from you regardless of what's posted.
+            </p>
+            <Link to="/contact" className="cr-cta__btn">Reach Out Directly</Link>
           </div>
         </div>
       </section>

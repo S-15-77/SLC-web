@@ -337,6 +337,84 @@
   opacity: 1;
 }
 
+/* ── Bottom CTA ── */
+.cr-cta {
+  position: relative;
+  padding: 160px 0;
+  background-color: var(--bg-dark);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cr-cta__bg {
+  position: absolute;
+  inset: 0;
+  background: url('/new-img/headway-jfR5wu2hMI0-unsplash.jpg') center/cover no-repeat;
+  z-index: 0;
+  transform: scale(1.1);
+}
+
+.cr-cta__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 1;
+}
+
+.cr-cta .container {
+  position: relative;
+  z-index: 2;
+}
+
+.cr-cta__content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.cr-cta__title {
+  color: #fff;
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.cr-cta__subtext {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  max-width: 680px;
+  margin: 0 auto 48px;
+  font-weight: 300;
+}
+
+.cr-cta__btn {
+  display: inline-block;
+  background: #fff;
+  color: var(--bg-dark);
+  padding: 18px 48px;
+  border-radius: 100px;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cr-cta__btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  background: #fdfdfd;
+}
+
 /* ── Responsive ── */
 @media (max-width: 1200px) {
   .cr-benefits {
