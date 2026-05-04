@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import '../styles/Services.css';
 
 const IconAI = () => (
@@ -33,32 +32,32 @@ const IconPeople = () => (
 export default function Services() {
   const services = [
     {
+      id: 'staffing',
+      title: 'AI & IT Staffing',
+      icon: <IconPeople />,
+      description: 'Talent is the most critical asset in a technology-driven world. We connect organizations with rigorously vetted AI Engineers, Data Scientists, Cloud Architects, and more — on your timeline, at your scale.',
+      path: 'Contract → Permanent → Executive Search'
+    },
+    {
       id: 'ai-innovation',
       title: 'AI Innovation',
       icon: <IconAI />,
-      description: 'Reimagine your business with Applied AI, Automation, and Generative AI.',
-      link: '/services/ai-innovation'
+      description: 'From intelligent automation to Generative AI, we design and implement applied AI strategies that create measurable competitive advantage. Whether you\'re starting your AI journey or scaling enterprise-grade systems, we engineer solutions that work in the real world.',
+      path: 'Strategy → Design → Deployment'
     },
     {
       id: 'cloud-tech',
       title: 'Cloud Technologies',
       icon: <IconCloud />,
-      description: 'Build secure, scalable, and cost-optimized cloud infrastructure across AWS, Azure, and GCP.',
-      link: '/services/cloud-tech'
+      description: 'We architect secure, scalable, and cost-optimized cloud environments across AWS, Azure, and GCP. Whether you\'re migrating legacy systems or building cloud-native from scratch, our engineers deliver infrastructure that performs and adapts.',
+      path: 'Migration → Modernization → Multi-Cloud Integration'
     },
     {
       id: 'llms',
-      title: 'Large Language Models',
+      title: 'Large Language Models (LLMs)',
       icon: <IconBrain />,
-      description: 'Leverage enterprise-grade LLMs for content generation and data intelligence.',
-      link: '/services/llms'
-    },
-    {
-      id: 'staffing',
-      title: 'AI & IT Staffing',
-      icon: <IconPeople />,
-      description: 'Access top-tier professionals specializing in AI, Data, and Cloud Technologies.',
-      link: '/services/staffing'
+      description: 'We help enterprises harness the power of LLMs — from fine-tuning proprietary models to building responsible AI governance frameworks. Unlock intelligent content generation, process automation, and deep data intelligence, all aligned to your business objectives.',
+      path: 'Custom LLMs → Prompt Engineering → AI Governance'
     }
   ];
 
@@ -71,9 +70,9 @@ export default function Services() {
         
         <div className="services-content-container">
           <div className="services-inner">
-            <h2 className="services-title fade-in">Our services</h2>
+            <h2 className="services-title fade-in">Our Services</h2>
             <p className="services-subtitle fade-in">
-              With experience across HR strategy, people management, and organizational development.
+              We bridge the gap between high-level strategy and technical execution, providing the expertise and the people to drive transformation.
             </p>
             
             <div className="services-list">
@@ -85,9 +84,7 @@ export default function Services() {
                   <div className="service-text">
                     <h3 className="service-item-title">{service.title}</h3>
                     <p className="service-item-description">{service.description}</p>
-                    <Link to={service.link} className="service-learn-more">
-                      Learn more →
-                    </Link>
+                    <p className="service-item-path">{service.path}</p>
                   </div>
                 </div>
               ))}
@@ -98,4 +95,3 @@ export default function Services() {
     </section>
   );
 }
-

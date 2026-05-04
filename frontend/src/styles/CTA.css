@@ -46,9 +46,18 @@
   font-family: var(--serif);
   font-size: clamp(2.5rem, 6vw, 4rem);
   line-height: 1.1;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
   font-style: italic;
   font-weight: 400;
+}
+
+.cta-description {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.25rem;
+  line-height: 1.6;
+  max-width: 680px;
+  margin: 0 auto 48px;
+  font-weight: 300;
 }
 
 .cta-actions {

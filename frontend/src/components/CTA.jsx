@@ -8,7 +8,10 @@ export default function CTA() {
       <div className="cta-overlay"></div>
       <div className="container">
         <div className="cta-content fade-in">
-          <h2 className="cta-title">Ready to move forward with clarity and confidence?</h2>
+          <h2 className="cta-title">Ready to Build What's Next?</h2>
+          <p className="cta-description">
+            Whether you're scaling AI capabilities, modernizing your cloud infrastructure, or building a world-class technology team — Saint Laurent Consulting is your edge.
+          </p>
           <div className="cta-actions">
             <Link to="/contact" className="btn btn-primary">
               Schedule a Consultation

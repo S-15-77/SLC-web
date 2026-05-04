@@ -44,11 +44,13 @@
 }
 
 .partners-grid {
-  display: flex;
-  gap: 60px 80px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 60px;
+  justify-items: center;
   align-items: center;
-  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* Each logo starts hidden; stagger via inline style delay */
@@ -98,7 +100,7 @@
 
 @media (max-width: 1024px) {
   .partners-grid {
-    gap: 48px 60px;
+    gap: 40px 40px;
   }
   .partner-logo img {
     width: 120px;
@@ -111,11 +113,19 @@
     padding: 60px 24px;
   }
   .partners-grid {
-    gap: 36px 48px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
   }
   .partner-logo img {
     width: 100px;
     height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
 

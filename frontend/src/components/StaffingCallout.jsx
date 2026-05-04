@@ -31,7 +31,7 @@ export default function StaffingCallout() {
           <div className="staffing-point">
             <div className="staffing-point-icon"><FiTarget /></div>
             <h3>Precision Matching</h3>
-            <p>We take time to understand your culture, your stack, and your goals—then we find professionals who fit all three.</p>
+            <p>We take time to understand your culture, your stack, and your goals then we find professionals who fit all three.</p>
           </div>
           <div className="staffing-point">
             <div className="staffing-point-icon"><FiZap /></div>
@@ -40,8 +40,8 @@ export default function StaffingCallout() {
           </div>
           <div className="staffing-point">
             <div className="staffing-point-icon"><FiGlobe /></div>
-            <h3>Cross-Border Reach</h3>
-            <p>With offices in New York and Markham, Ontario and a network spanning North America and Asia, we source talent without borders.</p>
+            <h3>National Reach</h3>
+            <p>With a network spanning every major tech hub in the United States, we source elite talent from coast to coast to meet your specific regional or remote needs.</p>
           </div>
         </div>
       </div>

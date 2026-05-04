@@ -26,24 +26,24 @@ export default function WhyChooseUs() {
 
   const features = [
     {
-      icon: <FiZap color="#000" size={48} />,
-      title: 'Innovation-Driven Solutions',
-      description: 'Technology meets strategy for real business impact.'
+      icon: <FiZap size={48} />,
+      title: 'Innovation-First Mindset',
+      description: "We don't retrofit old thinking with new tools. Every engagement starts with strategy and ends with measurable impact."
     },
     {
-      icon: <FiUsers color="#000" size={48} />,
+      icon: <FiUsers size={48} />,
       title: 'Global Talent Network',
-      description: '15,000+ pre-screened professionals across AI and IT.'
+      description: '15,000+ pre-screened professionals across AI, Data, and Cloud ready to deploy.'
     },
     {
-      icon: <FiSettings color="#000" size={48} />,
+      icon: <FiSettings size={48} />,
       title: 'End-to-End Delivery',
-      description: 'From design to deployment, we support every step.'
+      description: 'From discovery and design through deployment and optimization, we own every step.'
     },
     {
-      icon: <FiShield color="#000" size={48} />,
-      title: 'Client Commitment',
-      description: 'Personalized support and measurable results.'
+      icon: <FiShield size={48} />,
+      title: 'Boutique Commitment',
+      description: 'We work like partners, not vendors. Your goals become ours from day one.'
     }
   ];
 
