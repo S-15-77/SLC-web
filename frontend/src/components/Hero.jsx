@@ -17,10 +17,13 @@ export default function Hero() {
       <div className="container">
         <div className="hero-content">
           <h1 className="hero-title fade-in">
-            Building the bridge between Artificial Intelligence, Cloud Innovation, and Human Talent.
+            The Intelligence Behind Your Next Move.
           </h1>
           <p className="hero-description fade-in">
-            EMPOWER . INNOVATE . TRANSFORM
+            We sit at the intersection of Artificial Intelligence, Cloud Architecture, and Elite Talent helping organizations transform their technology and build the teams to sustain it.
+          </p>
+          <p className="hero-tagline fade-in">
+            Empower · Innovate · Transform
           </p>
           {/* <div className="hero-buttons fade-in">
             <Link to="/contact" className="btn btn-primary">

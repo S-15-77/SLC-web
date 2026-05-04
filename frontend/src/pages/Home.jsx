@@ -1,6 +1,7 @@
 import Hero from '../components/Hero';
 import Intro from '../components/Intro';
 import Services from '../components/Services';
+import StaffingCallout from '../components/StaffingCallout';
 import WhyChooseUs from '../components/WhyChooseUs';
 import CTA from '../components/CTA';
 import Partners from '../components/Partners';
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <Intro />
       <Services />
+      <StaffingCallout />
       <WhyChooseUs />
       <CTA />
       <Partners />

@@ -34,7 +34,16 @@
   font-size: 1.2rem;
   line-height: 1.75;
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 24px;
+}
+
+.intro-text--emphasis {
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 8px;
 }
 
 @media (max-width: 900px) {

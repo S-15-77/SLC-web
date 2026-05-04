@@ -6,13 +6,13 @@ export default function Intro() {
       <div className="container">
         <div className="intro-content">
           <h2 className="intro-title fade-in">
-            Believe that strong organizations are built on trust,
-            clarity, and people who feel supported and empowered.
+            Saint Laurent Consulting is a boutique technology consulting and talent firm built for organizations that refuse to be average.
           </h2>
           <p className="intro-text fade-in">
-            At Saint Laurent Consulting, we help organizations evolve through intelligent automation,
-            scalable cloud solutions, and world-class talent. Our multidisciplinary team delivers both
-            technology consulting and staffing solutions to accelerate innovation, efficiency, and sustainable growth.
+            We deliver AI-powered solutions, cloud transformation strategies, and access to an elite global professional network all under one roof.
+          </p>
+          <p className="intro-text intro-text--emphasis fade-in">
+            Whether you need to solve a complex technology challenge or hire the expert who can, we are the call you make.
           </p>
         </div>
       </div>
