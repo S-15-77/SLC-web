@@ -39,18 +39,22 @@
 .footer-logo {
   display: flex;
   align-items: center;
+  gap: 8px;
   font-family: var(--serif);
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--text-dark);
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .footer-brand-icon {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
-  filter: brightness(0); /* Makes the logo black for the beige background */
+  filter: brightness(0);
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
 }
 
 
