@@ -33,9 +33,9 @@ export default function Services() {
   const services = [
     {
       id: 'staffing',
-      title: 'AI & IT Staffing',
+      title: 'IT Staffing',
       icon: <IconPeople />,
-      description: 'Talent is the most critical asset in a technology-driven world. We connect organizations with rigorously vetted AI Engineers, Data Scientists, Cloud Architects, and more — on your timeline, at your scale.',
+      description: 'Talent is the most critical asset in a technology driven world. We connect organizations with rigorously vetted AI Engineers, Data Scientists, Cloud Architects, and more on your timeline, at your scale.',
       path: 'Contract → Permanent → Executive Search'
     },
     {
@@ -56,7 +56,7 @@ export default function Services() {
       id: 'llms',
       title: 'Large Language Models (LLMs)',
       icon: <IconBrain />,
-      description: 'We help enterprises harness the power of LLMs — from fine-tuning proprietary models to building responsible AI governance frameworks. Unlock intelligent content generation, process automation, and deep data intelligence, all aligned to your business objectives.',
+      description: 'We help enterprises harness the power of LLMs from fine-tuning proprietary models to building responsible AI governance frameworks. Unlock intelligent content generation, process automation, and deep data intelligence, all aligned to your business objectives.',
       path: 'Custom LLMs → Prompt Engineering → AI Governance'
     }
   ];
