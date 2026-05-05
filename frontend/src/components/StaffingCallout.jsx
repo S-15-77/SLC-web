@@ -8,7 +8,7 @@ export default function StaffingCallout() {
         <div className="staffing-callout__top">
           <div className="staffing-callout__content">
             <span className="staffing-label">Talent Excellence</span>
-            <h2 className="staffing-title">The Right People Are the Strategy.</h2>
+            <h2 className="staffing-title">The Right People<br />Are the Strategy.</h2>
             <p className="staffing-body">
               Technology is only as powerful as the team behind it. Saint Laurent Consulting gives you direct access 
               to a curated network of over <strong>15,000 pre-screened AI, Data, and Cloud professionals</strong> 
