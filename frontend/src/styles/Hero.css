@@ -45,34 +45,33 @@
 }
 
 .hero-content {
-  max-width: 800px;
-  margin-top: 60px;
+  max-width: 680px;
+  margin-top: 100px;
 }
 
 .hero-title {
   color: #fff;
-  margin-bottom: 24px;
-  /* font-family: var(--serif); */
-  /* font-style: italic; */
+  font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+  margin-bottom: 20px;
   font-weight: 400;
-  line-height: 1.05;
+  line-height: 1.1;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .hero-description {
   color: rgba(255, 255, 255, 0.85);
-  font-size: 1.15rem;
-  max-width: 620px;
-  margin-bottom: 24px;
+  font-size: 1rem;
+  max-width: 520px;
+  margin-bottom: 20px;
   line-height: 1.7;
   font-weight: 300;
 }
 
 .hero-tagline {
   color: rgba(255, 255, 255, 0.5);
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   max-width: 600px;
-  margin-bottom: 48px;
+  margin-bottom: 0;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 600;
@@ -84,32 +83,32 @@
 }
 
 .hero-cards-wrapper {
-  margin-top: 0;
-  padding-top: 20px;
-  padding-bottom: 0;
+  margin-top: 100px;
+  padding-top: 0;
+  padding-bottom: 40px;
 }
 
 .hero-cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 16px;
 }
 
 .hero-card {
   background: #fff;
   border-radius: 14px;
-  padding: 28px 24px;
+  padding: 28px 22px;
   text-align: center;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .hero-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
 }
 
@@ -117,17 +116,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   background: transparent;
-  border-radius: 10px;
+  border-radius: 8px;
   color: var(--text-dark);
-  font-size: 32px;
+  font-size: 24px;
 }
 
 .hero-card-title {
   font-family: var(--sans);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--text-dark);
   margin: 0;
@@ -136,26 +135,26 @@
 
 .hero-card-description {
   font-family: var(--sans);
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.55;
   margin: 0;
   flex-grow: 1;
 }
 
 .hero-card-btn {
   display: inline-block;
-  padding: 12px 28px;
+  padding: 10px 22px;
   background: var(--bg-dark);
   color: #fff;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   transition: all 0.3s ease;
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 .hero-card-btn:hover {
